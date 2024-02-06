@@ -37,6 +37,18 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docsSchool',
+        path: 'docsSchool',
+        routeBasePath: 'docsSchool',
+        sidebarPath: './sidebarsSchool.ts',
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -49,7 +61,6 @@ const config: Config = {
       items: [
         {
           type: 'dropdown',
-          sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Knowledge Base',
           items: [
@@ -80,6 +91,12 @@ const config: Config = {
             },
             // Füge hier weitere Links zu anderen Kategorien oder Sidebars hinzu...
           ],
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'docsSchoolSidebar',
+          position: 'left',
+          label: 'Bachelor Module',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
       ],
