@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Knowledge Base',
   tagline: 'Hier dokumentiere ich all das Wissen, das ich mir im Verlauf meiner Karriere als Entwickler aneigne.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   url: 'https://mathias-vogel.knowledge-base.dev/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -37,32 +37,20 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'docsSchool',
-        path: 'docsSchool',
-        routeBasePath: 'docsSchool',
-        sidebarPath: './sidebarsSchool.ts',
-      },
-    ],
-  ],
-
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo-512x512.png',
     navbar: {
       title: 'Home',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-192x192.png',
       },
       items: [
         {
           type: 'dropdown',
           position: 'left',
-          label: 'Knowledge Base',
+          label: 'Informatik',
           items: [
             {
               type: 'docSidebar',
@@ -94,7 +82,7 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'docsSchoolSidebar',
+          sidebarId: 'schoolSidebar',
           position: 'left',
           label: 'Bachelor Module',
         },
