@@ -1,0 +1,34 @@
+---
+slug: listener
+title: Listener
+position: 3
+---
+
+Eventlistener dienen dazu, auf eine Vielzahl von Aktionen zu reagieren, beispielsweise auf das Klicken eines Buttons.
+Ihnen kann eine Funktion übergeben werden, die nach Auslösung des entsprechenden Ereignisses ausgeführt wird.
+<hr />
+In React werden Eventlistener konventionell mit 'on' eingeleitet, gefolgt vom Namen des Ereignisses.
+Im Beispiel unten wird die Methode `handleClick` aufgerufen, wenn der Button geklickt wird.
+
+```jsx
+<button onClick={this.handleClick}>Klick mich</button>
+```
+
+Auch können Callbacks als Funktionen übergeben werden, die das Event-Objekt als Argument entgegennehmen.
+
+```jsx
+<button onClick={() => console.log('Hallo')}>Klick mich</button>
+```
+
+### Event-Objekt
+Event-Objekte enthalten Informationen über das ausgelöste Ereignis, wie beispielsweise die Daten des in einem Formular eingegebenen Textes.
+Sie können als Argument an die aufgerufene Funktion übergeben werden.
+
+```jsx
+function handleChange(event) {
+  console.log(event.target.value);
+}
+<input type="text" onChange={(event) => handleChange(event)} />
+```
+
+```jsx

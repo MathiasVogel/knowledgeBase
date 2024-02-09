@@ -1,0 +1,84 @@
+---
+slug: components
+title: Components
+position: 1
+---
+React-Komponenten sind wiederverwendbare, eigenständige Bausteine, die für die UI-Gestaltung in React-Anwendungen dienen und komplexe UIs durch Verschachtelung ermöglichen.
+<hr />
+
+### Naming Conventions
+Der Dateiname entspricht stets dem Namen der Komponente, die in der Datei enthalten ist, wobei beide im PascalCase formatiert sind.
+Komponentennamen beginnen mit einem Großbuchstaben, da sie ähnlich wie integrierte HTML-Elemente verwendet werden.
+Auf diese Weise werden Elemente, die kleingeschrieben sind, als integrierte HTML-Elemente identifiziert,
+während großgeschriebene Elemente als React-Komponenten erkannt werden.
+```tsx
+    <div>
+      <h1>Hier kommt was</h1>
+      <MyCustomCompnent /> // react component!
+    <div>
+```
+
+### Functional Components
+Eine Funktionskomponente ist eine JavaScript-Funktion, die JSX zurückgibt. Funktionale Komponenten sollten bevorzugt werden, da sie einfacher zu lesen und zu testen sind.
+```tsx
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+Syntax mit Arrow-Function:
+```tsx
+const App = () => {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Class Components
+
+### Wrapper Components
+
+### Expression vs. Statement
+In jeder Komponente kann vor der return-Anweisung beliebiger Code geschrieben werden.
+Innerhalb des return-Statements sind jedoch nur Ausdrücke (Expressions) erlaubt, während Anweisungen (Statements) nicht mehr verwendet werden können.
+
+**Ausdrücke (Expressions):**
+- Bedingungsoperator Conditional (ternary) operator
+- map-Funktion
+
+**Anweisungen (Statements):**
+- if/else
+- for-Schleifen
+
+### Fragments
+
+Da in JSX immer nur ein einzelnes Element zurückgegeben werden kann, ist es notwendig, mehrere Elemente in einem Wrapper zu gruppieren.
+Dies kann ein div oder ein Fragment sein. Ein Fragment ermöglicht es, mehrere Kinder zu gruppieren, ohne zusätzliche Knoten zum DOM hinzuzufügen,
+was besonders nützlich ist, um überflüssige Markup-Elemente zu vermeiden.
+```tsx
+return(
+  <Fragment>
+    <div>Mathias</div>
+    <div>Vogel</div>
+  </Fragment>
+);
+```
+Kurzschreibweise:
+```tsx
+return(
+  <>
+    <div>Mathias</div>
+    <div>Vogel</div>
+  </>
+);
+```

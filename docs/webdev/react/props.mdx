@@ -1,0 +1,50 @@
+---
+slug: props
+title: Props
+position: 2
+---
+
+Durch die Verwendung von Props (Properties) ist es möglich, Daten von einer übergeordneten Komponente (Parent Component) an eine untergeordnete Komponente (Child Component) zu übergeben.
+<hr />
+
+Der übergeordneten Komponente (Parent Component) übergibt Daten an den untergeordneten Komponente (Child Component) bei dessen Aufruf.
+Die übergebenen Daten können dann in der untergeordneten Komponente (Child Component) verwendet werden.
+
+```jsx
+function App() {
+  const name = 'Mathias';
+  const age = 31;
+
+  return (
+    <div>
+      <NameCard
+        name={name}
+        age={age}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+Der untergeordneten Komponente (Child Component) erhält ein Props-Objekt, das ausgelesen und verwendet werden kann.
+```jsx
+function NameCard(props) {
+  const { name, age } = props;
+
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <p>{name}</p>
+      <p>{age}</p>
+    </div>
+  );
+}
+
+export default NameCard;
+```
+
+### Lift the state up (Daten von unten nach oben)
+Es ist möglich, Daten, die in einer Kindkomponente generiert werden, an die übergeordnete Komponente zu übergeben.
+Dies geschieht, indem Funktionen über Props an die Kindkomponente weitergeleitet werden.
+Diese Funktionen werden dann in der Kindkomponente aufgerufen und erhalten als Parameter die Daten, die in der Elternkomponente benötigt werden.
