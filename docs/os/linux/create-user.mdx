@@ -3,6 +3,37 @@ slug: create-user
 title: User erstellen
 ---
 
-### Erstellen mit useradd
+Linux bietet zwei Hauptbefehle für die Erstellung von Benutzerkonten: `useradd` und `adduser`.
+<hr />
 
 ### Erstellen mit adduser
+Eine benutzerfreundlichere Alternative, die in Debian-basierten Distributionen verfügbar ist.
+Dieser Befehl führt interaktiv durch den Prozess der Benutzererstellung, wobei viele Einstellungen automatisch konfiguriert werden.
+Empfohlen für alltägliche Aufgaben und Einsteiger.
+
+```bash
+adduser <Benutzername>
+```
+
+### Erstellen mit useradd
+Ein flexibler, aber komplexer Befehl, der auf allen Linux-Distributionen verfügbar ist.
+Er bietet umfangreiche Optionen zur manuellen Konfiguration von Benutzerkonten, einschließlich Heimatverzeichnis, Shell, Gruppenzugehörigkeit und weiteren.
+Ideal für Skripting und erfahrene Systemadministratoren.
+
+````bash
+useradd <Optionen> <Benutzername>
+````
+
+- `-d <Heimatverzeichnis>`: Legt das Heimatverzeichnis des Benutzers fest.
+- `-s <Shell>`: Bestimmt die Login-Shell des Benutzers.
+- `-g <Gruppe>`: Weist den Benutzer einer primären Gruppe zu.
+- `-G <Gruppen>`: Weist den Benutzer zusätzlichen Gruppen zu.
+- `-m`: Erstellt das Heimatverzeichnis, wenn es nicht existiert.
+- `-e <Datum>`: Definiert das Ablaufdatum des Kontos.
+- `-f <Tage>`: Anzahl der Tage nach dem Ablauf des Passworts, bis das Konto deaktiviert wird.
+- `-c <Kommentar>`: Kommentarfeld für das Benutzerkonto, oft für den vollständigen Namen verwendet.
+- `-u <UID>`: Legt eine spezifische Benutzer-ID für das Konto fest.
+
+### Empfehlung
+Während useradd eine umfassende Kontrolle bietet, ist adduser für seine Benutzerfreundlichkeit und automatisierte Konfiguration bekannt.
+Die Wahl des richtigen Befehls hängt von den spezifischen Anforderungen und der Erfahrung des Administrators ab.
