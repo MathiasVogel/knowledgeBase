@@ -1,0 +1,72 @@
+---
+slug: ssh-putty
+title: SSH mit PuTTY
+---
+
+### Was ist PuTTY?
+PuTTY ist ein beliebtes und frei verfügbares Netzwerk-Tool, das vor allem für Windows entwickelt wurde.
+Es ermöglicht Benutzern, sicher über SSH (Secure Shell) und andere Protokolle wie Telnet und Rlogin, eine Verbindung zu Remote-Servern herzustellen.
+Mit seiner Hilfe können Administratoren und Entwickler Fernwartungsaufgaben durchführen, darunter das Ausführen von Befehlen, die Bearbeitung von Dateien und die Verwaltung von Netzwerkkonfigurationen.
+PuTTY zeichnet sich durch seine Benutzerfreundlichkeit und vielfältigen Funktionen aus, die es zu einem unverzichtbaren Werkzeug in der IT machen.
+<hr />
+
+### Was bietet PuTTY?
+- **PuTTYgen:** Ein Werkzeug zum Erzeugen und Verwalten von SSH-Schlüsselpaaren.
+- **PSCP:** Ein Befehlszeilenprogramm zur sicheren Übertragung von Dateien zwischen Computern.
+- **PSFTP:** Ein SFTP-Client (Secure File Transfer Protocol) für sichere Dateiübertragungen.
+- **PuTTYtel:** Eine Version von PuTTY, die ausschließlich Telnet unterstützt (ohne SSH).
+- **Pageant:** Ein SSH-Authentifizierungsagent, der private Schlüssel für die automatische Anmeldung speichert.
+
+### SSH-Verbindung mit PuTTY herstellen
+#### 1. Putty herunterladen und installieren
+- Lade die neueste Version von PuTTY von der offiziellen Website herunter und installieren sie auf dem Computer.
+
+#### 2. SSH-Key-Pair generieren
+- Starte PuTTYgen und klicken auf "Generate", um ein neues Schlüsselpaar zu erstellen.$
+- Bei Parameters können die Schlüsselgröße und der Schlüsseltyp ausgewählt werden.
+
+<img
+    src={require('./img/key-generate-puttygen.png').default}
+    alt="Puttygen Key generiern"
+    style={{ width: '50%', height: 'auto', marginBottom: "20px", borderRadius: '10px', boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+* Nach dem Generieren kann man noch ein Kommentar und ein Passwort hinzufügen.
+  * **Kommentar:** Oft wird der Benutzername oder die E-Mail-Adresse des Benutzers als Kommentar hinzugefügt.
+  * **Passwort:** Ein Passwort kann hinzugefügt werden, um den privaten Schlüssel zu schützen, muss aber nicht.
+
+<img
+    src={require('./img/key-generated-puttygen.png').default}
+    alt="Puttygen generierter Key"
+    style={{ width: '50%', height: 'auto', marginBottom: "20px", borderRadius: '10px', boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+- Nach dem Generieren können mit den Schaltflächen "Save public key" und "Save private key" die Schlüssel auf dem Computer gespeichert werden.
+Die Schlüssel-Paare sollten im .ssh-Verzeichnis des Benutzers gespeichert werden.
+
+#### 3. Public Key auf dem Server hinzufügen
+- Der öffentliche Schlüssel muss auf dem Server hinzugefügt werden, um die Authentifizierung zu ermöglichen.
+Um den öffentlichen Schlüssel zu erhalten, lädt mann den privaten Schlüssel in PuTTYgen und kopiert den Inhalt des Feldes "Public key for pasting into OpenSSH authorized_keys file".
+Die Anleitung für Windows-Server findest du [hier](/docs/tools/ssh/ssh-windows.mdx), für Linux-Server [hier](/docs/tools/ssh/ssh-linux.mdx).
+
+#### 4. SSH-Verbindung mit PuTTY herstellen
+- Für nur eine SSH-Verbindung kann man direkt PuTTY verwenden. Dazu muss in den Einstellungen der Private Key hinzugefügt werden.
+
+<img
+    src={require('./img/putty-add-privatekey.png').default}
+    alt="Puttygen generierter Key"
+    style={{ width: '50%', height: 'auto', marginBottom: "20px", borderRadius: '10px', boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+### Private  Keys mit Pageant laden
+Mit Pageant könne mehrere private Schlüssel geladen und verwaltet werden. Pageant wird direkt mit PuTTY installiert.
+1. Pageant starten
+2. Mit "Add Key" den privaten Schlüssel hinzufügen
+3. Der private Schlüssel wird nun geladen und kann für die SSH-Authentifizierung verwendet werden.
+4. Zum Schluss muss die Einstellung `Allow agent forwarding` in PuTTY aktiviert werden.
+
+<img
+    src={require('./img/pageant-setting.png').default}
+    alt="Puttygen generierter Key"
+    style={{ width: '50%', height: 'auto', marginBottom: "20px", borderRadius: '10px', boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)'}}
+/>

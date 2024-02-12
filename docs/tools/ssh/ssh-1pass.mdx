@@ -1,0 +1,27 @@
+---
+slug: ssh-1pass
+title: SSH mit 1Password
+---
+
+1 Password bietet die Möglichkeit, SSH-Keys zu speichern und zu verwalten.
+
+
+### Key erstellen
+Neue SSH-Keys können einfach über die 1Password-App erstellt werden.
+1. Neues Objekt auswählen und "SSH-Key" auswählen
+2. Namen anpassen und Schlüsseltyp auswählen
+
+<img
+    src={require('./img/key-generate-1pass.png').default}
+    alt="Alternativtext"
+    style={{ width: '40%', height: 'auto', borderRadius: '10px', boxShadow: '10px 20px 15px silver'}}
+/>
+
+### 1Password SSH agent starten
+Der 1Password SSH agent ist ein kleines Tool, das die SSH-Keys aus 1Password lädt und sie für die Verwendung in der SSH-Verbindung bereitstellt.
+Es kann über die 1Password-App oder über die Kommandozeile gestartet werden
+
+:::warning
+Der 1Password SSH Agent ist noch nicht für jeden Client verfügbar. Vorwiegend werden Git Features unterstützt.
+Unterstützte Client findet ihr [hier](https://developer.1password.com/docs/ssh/agent/compatibility)
+:::
