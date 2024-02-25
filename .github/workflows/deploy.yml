@@ -30,4 +30,3 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "build/*"  # Pfad zum Build-Verzeichnis
           target: "/var/www/wiki"  # Zielverzeichnis auf eurem Server
-          rm: true  # Entfernt alle Dateien im Zielverzeichnis vor dem Kopieren.
