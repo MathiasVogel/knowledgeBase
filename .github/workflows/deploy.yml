@@ -2,18 +2,18 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Setzt dies auf den Namen eures Produktionsbranches
+      - master
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '19.3.0'  # Setzt die Node-Version entsprechend eurer Projektanforderungen
+          node-version: '19.3.0'
 
       - name: Install dependencies
         run: npm install
@@ -23,11 +23,10 @@ jobs:
 
       - name: Deploy to Server
         uses: appleboy/scp-action@master
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
-          source: "./build"  # Pfad zum Build-Verzeichnis
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "build/*"  # Pfad zum Build-Verzeichnis
           target: "/var/www/wiki"  # Zielverzeichnis auf eurem Server
