@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Setzt dies auf den Namen eures Produktionsbranches
+      - master
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '19.3.0'  # Setzt die Node-Version entsprechend eurer Projektanforderungen
+          node-version: '19.3.0'
 
       - name: Install dependencies
         run: npm install
