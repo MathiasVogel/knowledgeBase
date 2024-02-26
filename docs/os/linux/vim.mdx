@@ -1,0 +1,56 @@
+---
+slug: vim
+title: Vim Editor
+---
+
+`vim` ist ein leistungsstarker Texteditor, der auf `vi` basiert.
+`vim` verbessert viele Aspekte von `vi`, bietet erweiterte Funktionalitäten und Benutzerfreundlichkeit, bleibt dabei aber kompatibel mit `vi`.
+
+### Grundlagen
+- **vim starten**: Um `vim` zu öffnen und eine Datei zu bearbeiten, tippen Sie `vim dateiname` in der Kommandozeile.
+- **Modi**: Wie `vi`, hat `vim` mehrere Modi, hauptsächlich den Normalmodus (Befehlsmodus) und den Einfügungsmodus. Der Normalmodus ist der Standard; um in den Einfügungsmodus zu wechseln, drücken Sie `i`. Um zum Normalmodus zurückzukehren, drücken Sie `Esc`.
+
+### Bewegung im Text
+- `h`, `j`, `k`, `l`: Bewegen den Cursor nach links, unten, oben, bzw. rechts.
+- `0` (Null): Springt zum Anfang der Zeile.
+- `$`: Zum Ende der Zeile springen.
+- `G`: Geht zum Ende des Dokuments.
+- `gg`: Geht zum Anfang des Dokuments.
+- `w`: Zum Anfang des nächsten Wortes springen.
+- `b`: Zum Anfang des vorherigen Wortes springen.
+
+### Bearbeiten
+Die folgenden Befehle funktionieren im Normalmodus:
+- `i`: Einfügungsmodus vor dem Cursor.
+- `a`: Einfügungsmodus nach dem Cursor.
+- `o`: Öffnet eine neue Zeile unter der aktuellen und wechselt in den Einfügungsmodus.
+- `O`: Öffnet eine neue Zeile über der aktuellen und wechselt in den Einfügungsmodus.
+- `x`: Löscht das Zeichen unter dem Cursor.
+- `dd`: Löscht die aktuelle Zeile.
+- `yy`: Kopiert die aktuelle Zeile.
+- `p`: Fügt den kopierten Inhalt unter der aktuellen Position ein.
+
+### Suchen und Ersetzen
+- `:/suchtext`: Sucht nach `suchtext` im Dokument.
+- `:?suchtext`: Sucht rückwärts nach `suchtext`.
+- `:%s/alt/neu/g`: Ersetzt alle Instanzen von `alt` durch `neu` im gesamten Dokument.
+
+### Dateioperationen
+- `:w`: Speichert die aktuelle Datei.
+- `:w dateiname`: Speichert die Datei unter einem neuen Namen.
+- `:q`: Verlässt `vim`, wenn keine Änderungen vorgenommen wurden.
+- `:q!`: Erzwingt das Verlassen ohne zu speichern.
+- `:wq` oder `:x` oder `ZZ`: Speichert und verlässt `vim`.
+
+### Erweiterte Befehle
+- `:undo`: Macht die letzte Aktion rückgängig.
+- `:redo`: Wiederholt die letzte rückgängig gemachte Aktion.
+- `:%y`: Kopiert den gesamten Text in die Zwischenablage.
+- `:set number`: Zeigt Zeilennummern an.
+- `:syntax on`: Aktiviert Syntax-Highlighting.
+
+### Hilfe bekommen
+- `:help`: Zeigt die Hilfe an.
+- `:help befehl`: Zeigt spezifische Hilfe für `befehl`.
+
+`vim` ist ein äußerst mächtiger Editor, der viel Zeit und Übung erfordert, um vollständig beherrscht zu werden. Diese Befehle sind nur der Anfang; `vim` bietet eine breite Palette an Funktionen, die durch die umfangreiche Dokumentation und Community-Unterstützung erschlossen werden können.

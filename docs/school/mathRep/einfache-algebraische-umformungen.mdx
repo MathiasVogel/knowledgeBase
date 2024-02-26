@@ -9,22 +9,86 @@ import HighlightBox from "../../../src/components/HighlightBox";
 <HighlightBox>**PPS**: Potenz vor Punkt vor Strich</HighlightBox>
 
 ### Addition
-
-<HighlightBox>Summand + Summand = **Summe**</HighlightBox>
+<HighlightBox> Summand + Summand = **Summe**</HighlightBox>
+- $a + 0 = 0 + a = a$ <br />
+- $a + b = b + a$ -> Summanden können vertauscht werden<br />
+- $a + 0 = 0 + a = a$ <br />
+- Nur gleiche Terme können addiert werden
 
 ### Subtraktion
-
 <HighlightBox>Minuend - Subtrahend = **Differenz**</HighlightBox>
+- $a - 0 = a$ <br />
+- Nur gleiche Terme können subtrahiert werden.
+- **Achtung:** $a - b \neq b - a$
 
 ### Vorzeichenregeln bei Klammern
-
-<HighlightBox>Minus vor der Klammer → Vorzeichen ändern</HighlightBox>
+<HighlightBox>Minus vor der Klammer $\Rightarrow$ Vorzeichen ändern</HighlightBox>
+- $a - (+b) = a + (-b) =  a - b$
+- $a - (-b) = a + b$
+- $a - (b + c) = a - b - c$
+- Geschachtelte Klammern werden von innen nach außen aufgelöst.
 
 ### Multiplikation
+<HighlightBox> Faktor * Faktor = **Produkt**</HighlightBox>
+- $a * b = b * a = ab = ba$
+- $1 * b = b$
+- $0 * b = 0$
+
+<HighlightBox> Von links nach rechts $\rightarrow$ Ausmultiplizieren / Von rechts nach links $\leftarrow$ Ausklammern </HighlightBox>
+- $a*(b + c) = ab + ac$
+- $(a + b)*c = ac + bc$
+- $a*(b - c) = ab – ac$
+
+<HighlightBox> **Zwei algebraische** Summen werden multipliziert, indem man **jedes** Glied der einen Summe mit **jedem** Glied der anderen Summe multipliziert.</HighlightBox>
+- $(a + b) * (c + d) = a(c + d) + b(c + d) =  ac + ad + bc + bd$
 
 ### Division
+<HighlightBox> Dividend / Divisor = **Quotient**</HighlightBox>
+- $a : b = \dfrac{a}{b}$
+- $0 : b = \dfrac{0}{b} = 0$
+- $a : 0 = \dfrac{a}{0} \rightarrow$ nicht definiert!
 
 ### Potenzen
+<HighlightBox> **Potenzieren** ist Multiplizieren mit gleichen Faktoren Bei gleichen Basen:  **Exponenten addieren**. </HighlightBox>
+- $a*a = a^2$
+- $a*a*a = a^3$
+- $a^m*a^n = a^{m+n}$
+
+<HighlightBox> **Potenzen** dividieren *\rightarrow* Bei gleichen Basen: **Exponenten subtrahieren** </HighlightBox>
+- $a^m : a^n = \dfrac{a^m}{a^n} = a^{m-n}$
 
 ### Binomische Formeln
+- $(a + b)^2 = a^2 + 2ab + b^2$
+- $(a - b)^2 = a^2 - 2ab + b^2$
+- $(b - a)^2 = b^2 - 2ab + a^2 = a^2 - 2ab + b^2 = (a - b)^2$
+- $(a + b)*(a - b) = a^2 - b^2$
+- $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$
+- $(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$
 
+### ggT = grösster gemeinsamer Teiler
+<HighlightBox> Faktorenzerlegung der Zahlen, bis alle Faktoren prim sind. Eine natürliche Zahl  ist dann prim, wenn sie genau  zwei  Teiler hat  (1 und sich selbst). Der ggT ist das Produkt aller gemeinsamen Primfaktoren. </HighlightBox>
+- **ggT**$(24, 36, 60)$
+    - $24 = 2*2*2*3$
+    - $36 = 2*2*3*3$
+    - $60 = 2*2*3*5$
+    - **ggT=** $2*2*3 = 12$
+- **ggT**$(a^2+2ab+b^2, a^2-b^2)$
+    - $a^2+2ab+b^2 = (a+b)^2$
+    - $a^2-b^2 = (a+b)(a-b)$
+    - **ggT=** $a+b$
+
+### kgV = kleinstes gemeinsames Vielfaches
+<HighlightBox> Faktorenzerlegung der Zahlen, bis alle Faktoren prim sind. Für jeden Primfaktor wird die grösste Häufigkeit markiert . Das kgV ist dann das Produkt aller markierten Primfaktoren.  </HighlightBox>
+- **kgV**$(24, 36, 60)$
+    - $24 = 2*2*2*3$
+    - $36 = 2*2*3*3$
+    - $60 = 2*2*3*5$
+    - **kgV=** $2*2*2*3*3*5 = 360$
+- **kgV**$(3a^2b, 5ac)$
+    - $3a^2b = 3*a*a*b$
+    - $5ac = 5*a*c$
+    - **kgV=** $3*5*a*a*b*c = 15a^2bc$
+- **kgV**$(a^2+2ab+b^2, a^2-b^2)$
+    - $a^2+2ab+b^2 = (a+b)^2$
+    - $a^2-b^2 = (a+b)(a-b)$
+    - **kgV=** $(a+b)*(a+b)*(a-b) = (a+b)*(a^2-b^2)$

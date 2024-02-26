@@ -1,0 +1,8 @@
+.small-table {
+    font-size: 0.8em; /* Verkleinert die Schriftgröße */
+    width: 90%; /* Verkleinert die Breite der Tabelle auf 80% des umgebenden Elements */
+    margin: auto; /* Zentriert die Tabelle */
+}
+.small-table th, .small-table td {
+    padding: 4px; /* Reduziert den Zelleninnenabstand */
+}
