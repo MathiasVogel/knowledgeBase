@@ -4,15 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:mdx/recommended" // Für MDX-Dateien
-  ],
   "overrides": [
-    {
-      "files": ["*.mdx"],
-      "extends": ["plugin:mdx/overrides"]
-    },
     {
       "files": ["*.ts", "*.tsx"], // TypeScript spezifische Konfiguration
       "parser": "@typescript-eslint/parser",
