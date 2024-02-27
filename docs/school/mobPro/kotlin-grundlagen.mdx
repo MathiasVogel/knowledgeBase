@@ -1,0 +1,140 @@
+---
+slug: kotlin-grundlagen
+title: Kotlin Grundlagen
+---
+
+### Variablen
+Kotlin verwendet val für unveränderliche (read-only) Variablen und var für veränderliche Variablen.
+``` kotlin
+val name: String = "Welt"  // Unveränderliche Variable
+---
+var greeting: String = "Hallo" // Veränderliche Variable
+```
+#### Nullsicherheit
+In Kotlin können Variablen nicht null sein, es sei denn, sie werden explizit als nullable deklariert.
+``` kotlin
+var a: String = "abc" // a = null  => Kompilierfehler
+---
+var b: String? = "abc" // b = null => OK
+```
+
+#### Null-Prüfung
+Kotlin bietet vier Möglichkeiten, mit null-Werten umzugehen:
+``` kotlin
+val length = if (b != null) b.length else -1 // Mit if-else
+---
+val length = b?.length // Mit dem Safe-Call-Operator => null, wenn b null ist
+---
+val length = b?.length ?: -1 // Mit dem Elvis-Operator => -1, wenn b null ist
+---
+val length = b!!.length // Mit dem Non-Null-Operator => NullPointerException, wenn b null ist
+```
+
+### Funktionen
+Funktionen werden in Kotlin mit dem Schlüsselwort fun deklariert. Der Rückgabetyp kann weggelassen werden, wenn die Funktion keinen Rückgabewert hat.
+``` kotlin
+fun greet() {
+    println("Hallo, Welt!")
+}
+---
+fun greet(name: String): String {
+    return "Hallo, $name!"
+}
+```
+#### Parameter
+Funktionen können benannte Parameter haben. Den Parameter kann optional ein Defaultwert zugewiesen werden.
+``` kotlin
+fun join(s1: String, s2: String, joiner: String = " "): String { // joiner besitzt einen Defaultwert
+    return s1 + joiner + s2
+}
+```
+Beim Funktionsaufruf können die Parameter benannt werden, um die Lesbarkeit zu verbessern. Ansonsten müssen die Parameter in der Reihenfolge der Deklaration übergeben werden.
+``` kotlin
+join("Hallo", "Welt", ", ") // Hallo, Welt
+---
+join(s2 = "Welt", s1 = "Hallo", joiner = ", ") // Hallo, Welt
+```
+#### Vararg Parameter
+Kotlin ermöglicht es, eine variable Anzahl von Parametern vom selben Typ an eine Funktion zu übergeben. Dies wird mit dem Schlüsselwort vararg erreicht.
+``` kotlin
+fun sum(vararg numbers: Int): Int {
+    return numbers.sum()
+}
+```
+
+### Kontrollstrukturen
+#### If-else
+In Kotlin wird if als Ausdruck verwendet, was bedeutet, dass es einen Wert zurückgeben kann. Daher kann es nicht nur für bedingte Logik verwendet werden, sondern auch als Teil einer Zuweisung.
+``` kotlin
+val max = if (a > b) a else b // max wird a oder b
+---
+val max = if (a > b) {
+    println("a ist größer")
+    a // der letzte Ausdruck bestimmt den Rückgabewert des Blocks
+} else {
+    println("b ist größer oder gleich")
+    b // der letzte Ausdruck bestimmt den Rückgabewert des Blocks
+}
+```
+
+#### For
+Die for-Schleife in Kotlin dient zum Durchlaufen von Bereichen, Arrays, Kollektionen oder anderen Arten von Iterables. Kotlin verwendet die in-Syntax, um die Elemente zu durchlaufen.
+``` kotlin
+for (item in collection) println(item)
+---
+for (item in collection) { println(item) }
+```
+
+#### When
+Die when-Anweisung ersetzt die switch-Anweisung aus anderen Programmiersprachen und bietet flexiblere und mächtigere Möglichkeiten. when kann als Ausdruck oder als einfache Anweisung verwendet werden.
+``` kotlin
+val result = when (x) {
+    1 -> "x ist 1"
+    2, 3 -> "x ist 2 oder 3"
+    in 4..10 -> "x ist zwischen 4 und 10"
+    is Int -> "x ist ein Int"
+    else -> "x ist unbekannt"
+}
+```
+#### While & do-while
+Die while- und do-while-Schleifen in Kotlin funktionieren ähnlich wie in anderen Programmiersprachen.
+``` kotlin
+while (x > 0) {
+    x--
+}
+---
+do {
+    val y = retrieveData()
+} while (y != null)
+```
+
+#### Return, break, continue
+In Kotlin können return, break, und continue genutzt werden, um den Fluss von Schleifen und Funktionen zu steuern:
+- **return:** Beendet eine Funktion und gibt optional einen Wert zurück.
+- **break:** Beendet die Ausführung der nächstgelegenen umschließenden Schleife.
+- **continue:** Springt zur nächsten Iteration der nächstgelegenen umschließenden Schleife.
+``` kotlin
+for (item in collection) {
+    if (item.shouldSkip()) continue
+    if (item.shouldBreak()) break
+    if (item.shouldReturn()) return
+}
+```
+
+### Let
+#### Erweiterungsfunktionen für Null-Prüfung
+Let kann als Erweiterungsfunktion für null-Prüfung verwendet werden. Es wird aufgerufen, wenn das Objekt nicht null ist und gibt das Ergebnis des Lambda-Ausdrucks zurück.
+``` kotlin
+val name: String? = getName()
+name?.let { // Block wird nur ausgeführt, wenn name nicht null ist
+    println("Der Name ist $it")
+}
+```
+#### Vermeidung von temporären Variablen
+Let ermöglicht es, auf eine temporäre Variable zu verzichten und stattdessen den Wert direkt in einem beschränkten Scope zu verwenden.
+``` kotlin
+getPerson().let { person ->
+    println(person.name)
+    println(person.age)
+}
+```
