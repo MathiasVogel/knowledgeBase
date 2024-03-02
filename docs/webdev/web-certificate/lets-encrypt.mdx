@@ -1,0 +1,37 @@
+---
+slug: lets-encrypt
+title: Let's Encrypt
+position: 2
+---
+Let's Encrypt ist ein kostenloser, automatisierter und offener Zertifikatsanbieter, der von der gemeinnützigen Internet Security Research Group (ISRG) betrieben wird.
+Let's Encrypt bietet kostenlose SSL/TLS-Zertifikate an, um die Verschlüsselung des Datenverkehrs zu fördern.
+Die Zertifikate sind 90 Tage gültig und können automatisiert erneuert werden.
+<hr />
+### Zertifikat einrichten
+#### 1. Cerbot installieren
+Certbot ist ein automatisiertes Tool, das von Let's Encrypt bereitgestellt wird, um Zertifikate einfach zu installieren und zu erneuern.
+Die Installation hängt von Betriebssystem sowie dem Webserver ab. Für viele Linux-Distributionen kannst du Certbot über den Paketmanager installieren.
+```bash
+sudo apt install certbot python3-certbot-nginx -y
+```
+#### 2. Zertifikat erhalten und konfigurieren
+Certbot kann nun verwendet werden, um ein Zertifikat zu erhalten und in die Nginx-Konfiguration zu integrieren. Ersetze `example.com` durch den korrekten Domainnamen.
+Certbot wird nach einer E-Mail-Adresse fragen und die Nutzungsbedingungen akzeptieren.
+```bash
+sudo certbot --nginx -d example.com -d example.com
+```
+
+#### 3. Automatische Erneuerung prüfen / einrichten
+Certbot erstellt normalerweise einen Cronjob, um die Zertifikate automatisch zu erneuern. Du kannst den Cronjob mit dem folgenden Befehl überprüfen:
+```bash
+sudo crontab -e
+```
+Falls der Cronjob nicht existiert, muss er manuell hinzugefügt werden. Mit sudo crontab -e kann die Crontab-Datei geöffnet und der folgende Eintrag am Ende der Datei hinzugefügt werden:
+```config
+0 0,12 * * * python3 -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew --quiet
+```
+#### 4. Zertifikat erneuern testen
+Die Erneuerung des Zertifikats kann getestet werden, indem das Zertifikat manuell erneuert wird. Dies kann mit dem folgenden Befehl getan werden:
+```bash
+sudo certbot renew --dry-run
+```

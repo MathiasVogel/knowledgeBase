@@ -8,9 +8,7 @@ const config: Config = {
   title: 'Knowledge Base',
   tagline: 'Hier dokumentiere ich all das Wissen, das ich mir im Verlauf meiner Karriere als Entwickler aneigne.',
   favicon: 'img/favicon.png',
-  url: 'https://mathias-vogel.knowledge-base.dev/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://wiki.mathias-vogel.ch',
   baseUrl: '/',
 
   onBrokenLinks: 'throw',
@@ -52,8 +50,13 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/logo-512x512.png',
+    algolia: {
+      apiKey:'d08bf873f25dce658539c15e144c25e2',
+      indexName: 'mathias-vogel',
+      contextualSearch: true,
+      appId: 'EPUTRR9NEG',
+    },
     navbar: {
       title: 'Home',
       logo: {
