@@ -3,10 +3,9 @@ slug: grundlagen
 title: Grundlagen
 ---
 import '../../../src/css/global.css';
-import HighlightBox from "../../../src/components/HighlightBox";
 
 ### Zahlen
-<table className="small-table">
+<table className='small-table'>
     <thead>
     <tr>
         <th>Zahlenbereich</th>
@@ -44,20 +43,91 @@ import HighlightBox from "../../../src/components/HighlightBox";
 </table>
 
 ### Der Betrag
-<HighlightBox>Der Betrag einer Zahl a ist der Abstand der Zahl vom Nullpunkt.</HighlightBox>
-- $|2| = |-2| = 2$
+:::info
+$\Rightarrow$ Der **Betrag** einer Zahl a ist der Abstand der Zahl vom Nullpunkt.
+:::
 
-<img
-    src={require('./img/betrag.png').default}
-    alt="Puttygen generierter Key"
-    style={{ width: '50%', height: 'auto', margin: '0 auto 30px auto', borderRadius: '10px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
-/>
-$|a| = \begin{cases} a & \text{falls } a \geq 0 \\ -a & \text{falls } a < 0 \end{cases}$
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <img
+        src={require('./img/betragSkala.png').default}
+        alt="Puttygen generierter Key"
+        style={{ width: '40%', height: 'auto', margin: '0 auto 30px auto', borderRadius: '10px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
+    />
+</div>
+**Beispiel:** $|2| = |-2| = 2$
+
+##### Rechenregeln
+1. $|a*b| = |a| * |b|$
+2. $|a/b| = |a| / |b|$
+3. $|a+b| \geq |a| + |b|$
+4. $|-a| = |a|$
+5. $|b-a| = |a-b|$
+6. $|a^2| = |(-a)^2| = a^2$
+7. $\sqrt{a^2} = |a|$
 
 ### Primzahlen
+:::info
+$\Rightarrow$ **Primzahlen** sind natürliche Zahlen, die grösser als Eins und die nur durch 1 und sich selber teilbar sind.
+:::
+- Null und Eins sind keine Primzahlen.
+
+**Beispiel:** 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101
 
 ### Prozentrechnung
 
 ### Intervalle
+<table className='small-table'>
+    <tbody>
+    <tr>
+        <td>Offenes Intervall</td>
+        <td>{']...['}</td>
+        <td>{']a; b[ = { x  |  a < x  ⋀  x < b } = { x  |  a < x < b }'}</td>
+        <td>Alle Zahlen zwischen a und b, exkl. a und b</td>
+    </tr>
+    <tr>
+        <td>Abgeschlossenes Intervall</td>
+        <td>{'[...]'}</td>
+        <td>{'[a; b] = { x  |  a ≤ x  ⋀  x ≤ b } = { x  |  a ≤ x ≤ b }'}</td>
+        <td>Alle Zahlen zwischen a und b, inkl. a und b</td>
+    </tr>
+    <tr>
+        <td>Links abgeschlossenes, rechts offenes Intervall</td>
+        <td>{'[...['}</td>
+        <td>{'[a; b[ = { x  |  a ≤ x  ⋀  x < b } = { x  |  a ≤ x < b }'}</td>
+        <td>Alle Zahlen zwischen a und b, inkl. a, exkl. b</td>
+    </tr>
+    <tr>
+        <td>Links offenes, rechts abgeschlossenes Intervall</td>
+        <td>{']...]'}</td>
+        <td>{']a; b] = { x  |  a < x  ⋀  x ≤ b } = { x  |  a < x ≤ b }'}</td>
+        <td>Alle Zahlen zwischen a und b, exkl. a, inkl. b</td>
+    </tr>
+    </tbody>
+</table>
 
-### Summenzeichen
+### Terme
+:::info
+$\Rightarrow$ Ein **Term** ist eine sinnvolle Zusammensetzung von Zahlen, Variablen, Operationszeichen und Klammern.
+:::
+**Beispiel:** $4, \quad x, \quad -a, \quad \lvert z \rvert, \quad \sqrt{a}, \quad a+b, \quad \frac{a}{b}, \quad a^{2}, \quad \frac{2}{2-u+2v}, \quad \left|u-7\right|$
+
+### Das Summenzeichen
+
+### Mengenlehre
+#### Darstellung von Mengen
+Es gibt 2 Möglichkeiten, Mengen darzustellen:
+1. **Aufzählende Form**: $\mathbb{N} = \{1, 2, 3, 4, 5, ...\}$
+2. **Beschreibende Form**: Die Menge der natürlichen Zahlen.
+3. **Bildungsvorschrift**: $\{n \mid n \text{ ist eine natürliche Zahl}\}$ oder $\{n \mid n \in \mathbb{N}\}$
+
+:::info
+$\Rightarrow$ Das **Zeichen** $\bigm|$ bedeutet "für die gilt".
+:::
+
+#### Begriffe der Mengenlehre
+- Anzahl Elemente
+    - Die Anzahl der Elemente einer Menge A heisst die **Mächtigkeit** oder **Kardinalität** der Menge A.
+    - Zwei Mengen A und B heissen **gleichmächtig**, wenn sie die **gleiche** Anzahl Elemente haben.
+- Teilmenge
+    - Eine Menge B heisst **Teilmenge** von A, wenn jedes Element von B in A enthalten ist. $B \subset A$
+    - Zwei Mengen A und B heissen **gleich**, wenn sie die genau gleichen Elemente besitzen. $A = B$
