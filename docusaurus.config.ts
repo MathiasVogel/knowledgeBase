@@ -54,8 +54,8 @@ const config: Config = {
     algolia: {
       apiKey:'d08bf873f25dce658539c15e144c25e2',
       indexName: 'mathias-vogel',
-      contextualSearch: true,
       appId: 'EPUTRR9NEG',
+      contextualSearch: false,
     },
     navbar: {
       title: 'Home',
