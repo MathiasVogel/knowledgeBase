@@ -52,10 +52,10 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo-512x512.png',
     algolia: {
-      apiKey:'6fb1d786bec01eecebea58fae2901418',
+      apiKey:'d08bf873f25dce658539c15e144c25e2',
       indexName: 'mathias-vogel',
-      contextualSearch: true,
       appId: 'EPUTRR9NEG',
+      contextualSearch: false,
     },
     navbar: {
       title: 'Home',

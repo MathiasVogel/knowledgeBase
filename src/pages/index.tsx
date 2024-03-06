@@ -5,6 +5,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import Search from "@site/src/components/Search";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -16,7 +17,7 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          ** Hier kommt eine Suchleiste **
+          <Search />
         </div>
       </div>
     </header>

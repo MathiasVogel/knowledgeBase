@@ -1,0 +1,99 @@
+---
+slug: funktionen
+title: Funktionen
+---
+import '../../../src/css/global.css';
+
+### Definition
+Eine Funktion ist eine mathematische Abbildung, die jedem Element einer Definitionsmenge genau ein Element einer Zielmenge zuordnet.
+#### Definitionsbereich
+Der Definitionsbereich einer Funktion ist die Menge aller Eingabewerte, für die die Funktion definiert ist.
+In anderen Worten, es ist die Menge aller möglichen Werte, die man in die Funktion einsetzen kann,
+ohne auf Probleme wie die Division durch Null oder das Ziehen der Wurzel aus einer negativen Zahl zu stoßen.<br />
+$D(f) = [5, 40]$
+#### Wertebereich
+Der Wertebereich einer Funktion ist die Menge aller Ausgabewerte, die die Funktion annehmen kann,
+wenn man alle möglichen Werte aus ihrem Definitionsbereich einsetzt.<br />
+$W(f) = [0, 250]$
+
+### Lineare Funktionen
+#### Grundfunktion
+$f(x) = m * x + q$
+- **m** = Steigung, **q** = y-Achsenabschnitt
+
+#### Steigung *m* berechnen
+$m = \dfrac{\Delta y}{\Delta x} = \dfrac{y2 - y1}{x2 - x1}$
+<img
+    src={require('./img/steigungsdreieck.png').default}
+    alt="Steigungsdreieck"
+    style={{ width: '30%', height: 'auto', margin: '0 auto 5px auto', borderRadius: '5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+- Funktion heisst **steigen** wenn f(x) grösser wird wenn x grösser wird.
+- Funktion heisst **fallen** wenn f(x) kleiner wird wenn x grösser wird.
+- Funktion heisst **monoton** wenn sie weder steigt noch fällt.
+
+#### Der Differentialquotient
+$\dfrac{\Delta y}{\Delta x} = \dfrac{f(x + \Delta x) - f(x)}{\Delta x}$
+
+#### Nullstelle
+Die Nullstelle ist der Schnittpunkt der Gerade auf der x-Achse -> $y = 0$
+
+#### Gerade rechtwinklig zu einer anderen
+Für die Berechnung einer Gerade, welche rechtwinklig zu einer andere ist, gilt:<br />
+$m2 = -\dfrac{1}{m1}$
+
+#### Mittelpunkt zwischen zwei Geraden
+Um den Mittelpunkt zwischen zwei Punkten zu berechnen gilt:<b />
+$M = \dfrac{a1 + x2}{2} : \dfrac{y1 + y2}{2}$
+
+#### Proportionalität
+Eine Funktion ist proportional, wenn sie durch den Ursprung geht. Das bedeutet, dass der y-Achsenabschnitt 0 ist.
+
+
+### Quadratische Funktionen
+#### Grundfunktion
+$y = x^2$
+<img
+    src={require('./img/quadratische-funktion.png').default}
+    alt="Quadratische Funktion"
+    style={{ width: '20%', height: 'auto', margin: '0 auto 5px auto', borderRadius: '5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+#### Gleichung allgemein Quadratisch
+$a * x^2 + b * x + c = 0$
+#### Mitternachtsformel
+$x1, x2 = \dfrac{-b(+/-)\sqrt{b^2 -4ac}}{2a}$
+#### Lösen mit Faktorzerlegung
+Die Gleichung muss in die Form: $(x + 4)(x - 8) = 0$ gebracht werden. Lösungen sind -4 und 8.
+#### Diskriminante
+$D = Diskriminante = b^2 - 4ac$ <br />
+$D > 0$ -> zwei Lösungen <br />
+$D = 0$ -> eine Lösung <br />
+$D < 0$ -> keine lösung <br />
+
+#### Sepzialfälle
+
+### Die Umkehrfunktion
+Mit der Umkehrfunktion kommt man von y wieder auf x.
+<img
+    src={require('./img/umkehrfunktion.png').default}
+    alt="Umkehrfunktion"
+    style={{ width: '25%', height: 'auto', margin: '0 auto 15px auto', borderRadius: '5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+:::warning
+Eine Umkehrfunktion gibt es nur, wenn genau einem x ein y zuweisbar ist.
+:::
+
+- Bei **linearen Gleichungen** muss die Funktion nach y aufgelöst werden.
+#### Bei quadratischen Gleichungen
+
+### Potenzfunktionen
+<img
+    src={require('./img/potenzfunktionen.png').default}
+    alt="Potenzfunktionen"
+    style={{ width: '25%', height: 'auto', margin: '0 auto 15px auto', borderRadius: '5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)'}}
+/>
+
+### Exponentialfunktionen
