@@ -1,7 +1,7 @@
 import { DocSearch } from '@docsearch/react';
 
 import '@docsearch/css';
-import '../css/Search.css';
+import '../css/search-box.css';
 
 function Search() {
   return (
